@@ -45,7 +45,11 @@ const Button = gg.component<ButtonArgs>((args) => {
   if (args.isDoubleWidth) {
     classes.push(buttonStyles.getClass("double-width"));
   }
-  return <button class={classes}>{args.children}</button>;
+  return (
+    <button class={classes} onclick={() => alert("click event")}>
+      {args.children}
+    </button>
+  );
 });
 
 const stylesheet = gg.stylesheet(`
