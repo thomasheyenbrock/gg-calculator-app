@@ -109,57 +109,26 @@ const PageComponent = gg.component(() => {
           <Button>{"&div;"}</Button>
         </div>
         <div>
-          <Button onclick={gg.setState(firstNumber, (value) => value + "7")}>
-            7
-          </Button>
-          <Button onclick={gg.setState(firstNumber, (value) => value + "8")}>
-            8
-          </Button>
-          <Button onclick={gg.setState(firstNumber, (value) => value + "9")}>
-            9
-          </Button>
+          <Button>7</Button>
+          <Button>8</Button>
+          <Button>9</Button>
           <Button>{"&times;"}</Button>
         </div>
         <div>
-          <Button onclick={gg.setState(firstNumber, (value) => value + "4")}>
-            4
-          </Button>
-          <Button onclick={gg.setState(firstNumber, (value) => value + "5")}>
-            5
-          </Button>
-          <Button onclick={gg.setState(firstNumber, (value) => value + "6")}>
-            6
-          </Button>
+          <Button>4</Button>
+          <Button>5</Button>
+          <Button>6</Button>
           <Button>-</Button>
         </div>
         <div>
-          <Button onclick={gg.setState(firstNumber, (value) => value + "1")}>
-            1
-          </Button>
-          <Button onclick={gg.setState(firstNumber, (value) => value + "2")}>
-            2
-          </Button>
-          <Button onclick={gg.setState(firstNumber, (value) => value + "3")}>
-            3
-          </Button>
+          <Button>1</Button>
+          <Button>2</Button>
+          <Button>3</Button>
           <Button>+</Button>
         </div>
         <div>
-          <Button
-            isDoubleWidth
-            onclick={gg.setState(firstNumber, (value) =>
-              value ? value + "0" : value
-            )}
-          >
-            0
-          </Button>
-          <Button
-            onclick={gg.setState(firstNumber, (value) =>
-              value.includes(".") ? value : value + "."
-            )}
-          >
-            .
-          </Button>
+          <Button isDoubleWidth>=</Button>
+          <Button>.</Button>
           <Button>=</Button>
         </div>
       </body>
