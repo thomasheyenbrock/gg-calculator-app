@@ -115,6 +115,16 @@ const setCalculatorState = gg.setState(
         }
         break;
       }
+      case "C": {
+        if (value.result) {
+          value.previousResult = value.result;
+        }
+        value.firstNumber = "";
+        value.operator = "";
+        value.secondNumber = "";
+        value.result = "";
+        break;
+      }
     }
     return value;
   },
