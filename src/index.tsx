@@ -1,5 +1,7 @@
 import { gg } from "../deps.ts";
 
+const firstNumber = gg.state("");
+
 const buttonStyles = gg.stylesheet(`
   .button {
     padding: 0.25em 0;
