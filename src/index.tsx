@@ -56,6 +56,15 @@ const setSecondNumber = gg.setState(
       return value;
     }
     const buttonText = event.target.innerText;
+    if (["1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(buttonText)) {
+      return value + buttonText;
+    }
+    if (buttonText === "0" && value) {
+      return value + buttonText;
+    }
+    if (buttonText === "." && !value.includes(".")) {
+      return value + buttonText;
+    }
     return value;
   },
   [operator]
