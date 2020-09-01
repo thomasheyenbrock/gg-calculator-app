@@ -1,4 +1,4 @@
-import { gg, SetStateHandler } from "../deps.ts";
+import { gg } from "../deps.ts";
 
 const firstNumber = gg.state("");
 
@@ -55,7 +55,6 @@ const buttonStyles = gg.stylesheet(`
 
 type ButtonArgs = {
   isDoubleWidth?: boolean;
-  onclick?: SetStateHandler;
 };
 
 const Button = gg.component<ButtonArgs>((args) => {
