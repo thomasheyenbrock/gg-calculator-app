@@ -84,6 +84,18 @@ const setSecondNumber = gg.setState(
   [operator]
 );
 
+const setCalculatorState = gg.setState(
+  calculatorState,
+  (value, event) => {
+    if (!(event.target instanceof HTMLButtonElement)) {
+      return value;
+    }
+    const buttonText = event.target.innerText;
+    return value;
+  },
+  []
+);
+
 const buttonStyles = gg.stylesheet(`
   .button {
     padding: 0.25em 0;
