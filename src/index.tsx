@@ -6,6 +6,7 @@ const PageComponent = gg.component(() => {
       <body>
         <h1>Calculator App</h1>
         <p>Apply one basic arithmetic operation at a time to two numbers.</p>
+        <div>3 + 4</div>
       </body>
     </html>
   );
