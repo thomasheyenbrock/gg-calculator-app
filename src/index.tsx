@@ -20,6 +20,10 @@ const setFirstNumber = gg.setState(firstNumber, (value, event) => {
   return value;
 });
 
+const setOperator = gg.setState(operator, (value) => {
+  return value;
+});
+
 const buttonStyles = gg.stylesheet(`
   .button {
     padding: 0.25em 0;
