@@ -136,7 +136,13 @@ const PageComponent = gg.component(() => {
           >
             0
           </Button>
-          <Button>.</Button>
+          <Button
+            onclick={gg.setState(firstNumber, (value) =>
+              value.includes(".") ? value : value + "."
+            )}
+          >
+            .
+          </Button>
           <Button>=</Button>
         </div>
       </body>
