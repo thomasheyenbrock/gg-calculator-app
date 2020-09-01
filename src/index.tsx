@@ -6,7 +6,9 @@ type ButtonArgs = {
 
 const Button = gg.component<ButtonArgs>((args) => {
   return (
-    <button class={[stylesheet.getClass("button")]}>{args.children}</button>
+    <button class={[stylesheet.getClass("button"), ...(args.class || [])]}>
+      {args.children}
+    </button>
   );
 });
 
