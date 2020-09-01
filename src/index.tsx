@@ -1,6 +1,10 @@
 import { gg } from "../deps.ts";
 
-const Button = gg.component((args) => {
+type ButtonArgs = {
+  class?: string[];
+};
+
+const Button = gg.component<ButtonArgs>((args) => {
   return (
     <button class={[stylesheet.getClass("button")]}>{args.children}</button>
   );
