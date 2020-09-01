@@ -7,6 +7,17 @@ const stylesheet = gg.stylesheet(`
     font-family: sans-serif;
     background-color: #F6F7F8;
   }
+  .display {
+    font-size: 3em;
+    text-align: right;
+    padding: 0.1em 0.25em;
+
+    min-height: 1.5em;
+    width: 24rem;
+
+    border: 2px solid #7A8EA1;
+    box-sizing: border-box;
+  }
 `);
 
 const PageComponent = gg.component(() => {
