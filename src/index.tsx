@@ -22,7 +22,9 @@ const calculatorState = gg.state(
 
 type Result = { id: string; result: string };
 const initialValue: Result[] = [];
-const previousResults = gg.state(initialValue);
+const previousResults = gg.state(initialValue, {
+  hasResults: (value) => value.length > 0,
+});
 
 const setCalculatorState = gg.setState(
   calculatorState,
@@ -299,6 +301,10 @@ const PageComponent = gg.component(() => {
           <Button>.</Button>
           <Button>=</Button>
         </div>
+        <h2>Previous results</h2>
+        <p hidden={previousResults.selectors.hasResults}>
+          No calculation has been finished yet.
+        </p>
       </body>
     </html>
   );
