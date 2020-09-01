@@ -46,6 +46,9 @@ const stylesheet = gg.stylesheet(`
   .button + .button {
     border-left: none;
   }
+  .double-width {
+    width: 12rem;
+  }
 `);
 
 const PageComponent = gg.component(() => {
@@ -85,7 +88,14 @@ const PageComponent = gg.component(() => {
           <button class={[stylesheet.getClass("button")]}>+</button>
         </div>
         <div>
-          <button class={[stylesheet.getClass("button")]}>0</button>
+          <button
+            class={[
+              stylesheet.getClass("button"),
+              stylesheet.getClass("double-width"),
+            ]}
+          >
+            0
+          </button>
           <button class={[stylesheet.getClass("button")]}>.</button>
           <button class={[stylesheet.getClass("button")]}>=</button>
         </div>
