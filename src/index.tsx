@@ -5,10 +5,17 @@ const calculatorState = gg.state(
     firstNumber: "",
     operator: "",
     secondNumber: "",
+    result: "",
   },
   {
     display: (value) =>
-      [value.firstNumber, value.operator, value.secondNumber].join(" "),
+      [
+        value.firstNumber,
+        value.operator,
+        value.secondNumber,
+        value.result ? "=" : "",
+        value.result,
+      ].join(" "),
   }
 );
 
