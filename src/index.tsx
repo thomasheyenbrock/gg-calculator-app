@@ -164,6 +164,25 @@ const setCalculatorState = gg.setState(
   []
 );
 
+const setPreviousResults = gg.setState(
+  previousResults,
+  (value, event, [calculatorStateValue]) => {
+    if (!(event.target instanceof HTMLButtonElement)) {
+      return value;
+    }
+    const buttonText = event.target.innerText;
+    if (buttonText === "C" && calculatorStateValue.result) {
+      value.unshift({
+        id: Date.now().toString(),
+        result: calculatorStateValue.result,
+      });
+      return value;
+    }
+    return value;
+  },
+  [calculatorState]
+);
+
 const buttonStyles = gg.stylesheet(`
   .button {
     padding: 0.25em 0;
