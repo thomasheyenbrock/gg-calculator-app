@@ -3,22 +3,29 @@ import { gg } from "../deps.ts";
 const firstNumber = gg.state("");
 const operator = gg.state("");
 
-const setFirstNumber = gg.setState(firstNumber, (value, event) => {
-  if (!(event.target instanceof HTMLButtonElement)) {
+const setFirstNumber = gg.setState(
+  firstNumber,
+  (value, event, [operatorValue]) => {
+    if (operatorValue) {
+      return value;
+    }
+    if (!(event.target instanceof HTMLButtonElement)) {
+      return value;
+    }
+    const buttonText = event.target.innerText;
+    if (["1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(buttonText)) {
+      return value + buttonText;
+    }
+    if (buttonText === "0" && value) {
+      return value + buttonText;
+    }
+    if (buttonText === "." && !value.includes(".")) {
+      return value + buttonText;
+    }
     return value;
-  }
-  const buttonText = event.target.innerText;
-  if (["1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(buttonText)) {
-    return value + buttonText;
-  }
-  if (buttonText === "0" && value) {
-    return value + buttonText;
-  }
-  if (buttonText === "." && !value.includes(".")) {
-    return value + buttonText;
-  }
-  return value;
-});
+  },
+  [operator]
+);
 
 const setOperator = gg.setState(
   operator,
