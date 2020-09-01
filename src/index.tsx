@@ -76,40 +76,33 @@ const PageComponent = gg.component(() => {
         <p>Apply one basic arithmetic operation at a time to two numbers.</p>
         <div class={[stylesheet.getClass("display")]}>3 + 4</div>
         <div>
-          <button class={[stylesheet.getClass("button")]}>AC</button>
-          <button class={[stylesheet.getClass("button")]}>C</button>
-          <button class={[stylesheet.getClass("button")]}>ANS</button>
-          <button class={[stylesheet.getClass("button")]}>{"&div;"}</button>
+          <Button>AC</Button>
+          <Button>C</Button>
+          <Button>ANS</Button>
+          <Button>{"&div;"}</Button>
         </div>
         <div>
-          <button class={[stylesheet.getClass("button")]}>7</button>
-          <button class={[stylesheet.getClass("button")]}>8</button>
-          <button class={[stylesheet.getClass("button")]}>9</button>
-          <button class={[stylesheet.getClass("button")]}>{"&times;"}</button>
+          <Button>7</Button>
+          <Button>8</Button>
+          <Button>9</Button>
+          <Button>{"&times;"}</Button>
         </div>
         <div>
-          <button class={[stylesheet.getClass("button")]}>4</button>
-          <button class={[stylesheet.getClass("button")]}>5</button>
-          <button class={[stylesheet.getClass("button")]}>6</button>
-          <button class={[stylesheet.getClass("button")]}>-</button>
+          <Button>4</Button>
+          <Button>5</Button>
+          <Button>6</Button>
+          <Button>-</Button>
         </div>
         <div>
-          <button class={[stylesheet.getClass("button")]}>1</button>
-          <button class={[stylesheet.getClass("button")]}>2</button>
-          <button class={[stylesheet.getClass("button")]}>3</button>
-          <button class={[stylesheet.getClass("button")]}>+</button>
+          <Button>1</Button>
+          <Button>2</Button>
+          <Button>3</Button>
+          <Button>+</Button>
         </div>
         <div>
-          <button
-            class={[
-              stylesheet.getClass("button"),
-              stylesheet.getClass("double-width"),
-            ]}
-          >
-            0
-          </button>
-          <button class={[stylesheet.getClass("button")]}>.</button>
-          <button class={[stylesheet.getClass("button")]}>=</button>
+          <Button class={[stylesheet.getClass("double-width")]}>0</Button>
+          <Button>.</Button>
+          <Button>=</Button>
         </div>
       </body>
     </html>
