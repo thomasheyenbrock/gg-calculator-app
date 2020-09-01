@@ -2,6 +2,7 @@ import { gg } from "../deps.ts";
 
 const firstNumber = gg.state("");
 const operator = gg.state("");
+const secondNumber = gg.state("");
 
 const setFirstNumber = gg.setState(
   firstNumber,
@@ -44,6 +45,10 @@ const setOperator = gg.setState(
   },
   [firstNumber]
 );
+
+const setSecondNumber = gg.setState(secondNumber, (value) => {
+  return value;
+});
 
 const buttonStyles = gg.stylesheet(`
   .button {
@@ -89,7 +94,10 @@ const Button = gg.component<ButtonArgs>((args) => {
     classes.push(buttonStyles.getClass("double-width"));
   }
   return (
-    <button class={classes} onclick={[setFirstNumber, setOperator]}>
+    <button
+      class={classes}
+      onclick={[setFirstNumber, setOperator, setSecondNumber]}
+    >
       {args.children}
     </button>
   );
@@ -127,7 +135,7 @@ const PageComponent = gg.component(() => {
         <h1>Calculator App</h1>
         <p>Apply one basic arithmetic operation at a time to two numbers.</p>
         <div class={[stylesheet.getClass("display")]}>
-          {firstNumber} {operator}
+          {firstNumber} {operator} {secondNumber}
         </div>
         <div>
           <Button>AC</Button>
