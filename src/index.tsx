@@ -128,7 +128,14 @@ const PageComponent = gg.component(() => {
           <Button>+</Button>
         </div>
         <div>
-          <Button isDoubleWidth>0</Button>
+          <Button
+            isDoubleWidth
+            onclick={gg.setState(firstNumber, (value) =>
+              value ? value + "0" : value
+            )}
+          >
+            0
+          </Button>
           <Button>.</Button>
           <Button>=</Button>
         </div>
