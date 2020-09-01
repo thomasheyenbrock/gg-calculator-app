@@ -230,7 +230,7 @@ const Button = gg.component<ButtonArgs>((args) => {
     classes.push(buttonStyles.getClass("double-width"));
   }
   return (
-    <button class={classes} onclick={setCalculatorState}>
+    <button class={classes} onclick={[setPreviousResults, setCalculatorState]}>
       {args.children}
     </button>
   );
