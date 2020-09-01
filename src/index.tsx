@@ -48,7 +48,7 @@ const Button = gg.component<ButtonArgs>((args) => {
   return (
     <button
       class={classes}
-      onclick={gg.setState(firstNumber, (value) => value + "1")}
+      onclick={gg.setState(firstNumber, (value) => value + args.children)}
     >
       {args.children}
     </button>
