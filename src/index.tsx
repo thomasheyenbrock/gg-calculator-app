@@ -3,6 +3,11 @@ import { gg } from "../deps.ts";
 const firstNumber = gg.state("");
 const operator = gg.state("");
 const secondNumber = gg.state("");
+const calculatorState = gg.state({
+  firstNumber: "",
+  operator: "",
+  secondNumber: "",
+});
 
 const setFirstNumber = gg.setState(
   firstNumber,
