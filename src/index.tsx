@@ -2,7 +2,11 @@ import { gg, SetStateHandler } from "../deps.ts";
 
 const firstNumber = gg.state("");
 
-const setFirstNumber = gg.setState(firstNumber, (value) => {
+const setFirstNumber = gg.setState(firstNumber, (value, event) => {
+  if (!(event.target instanceof HTMLButtonElement)) {
+    return value;
+  }
+  const buttonText = event.target.innerText;
   return value;
 });
 
