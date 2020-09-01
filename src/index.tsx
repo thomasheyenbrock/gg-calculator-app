@@ -1,5 +1,9 @@
 import { gg } from "../deps.ts";
 
+const Button = gg.component(() => {
+  return <button>click me</button>;
+});
+
 const stylesheet = gg.stylesheet(`
   body {
     margin: 0 auto;
