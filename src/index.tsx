@@ -133,6 +133,13 @@ const setCalculatorState = gg.setState(
         value.previousResult = "";
         break;
       }
+      case "ANS": {
+        if (value.result || !value.previousResult) {
+          break;
+        }
+        value[value.operator ? "secondNumber" : "firstNumber"] = buttonText;
+        break;
+      }
     }
     return value;
   },
