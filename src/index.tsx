@@ -1,7 +1,9 @@
 import { gg } from "../deps.ts";
 
 const Button = gg.component((args) => {
-  return <button>{args.children}</button>;
+  return (
+    <button class={[stylesheet.getClass("button")]}>{args.children}</button>
+  );
 });
 
 const stylesheet = gg.stylesheet(`
