@@ -305,6 +305,15 @@ const PageComponent = gg.component(() => {
         <p hidden={previousResults.selectors.hasResults}>
           No calculation has been finished yet.
         </p>
+        <ul>
+          {gg
+            .unstable_list(previousResults, {
+              result: (value) => value.result,
+            })
+            .map((selectors) => (
+              <li>{selectors.result}</li>
+            ))}
+        </ul>
       </body>
     </html>
   );
