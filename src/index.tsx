@@ -163,7 +163,7 @@ const PageComponent = gg.component(() => {
         <h1>Calculator App</h1>
         <p>Apply one basic arithmetic operation at a time to two numbers.</p>
         <div class={[stylesheet.getClass("display")]}>
-          {firstNumber} {operator} {secondNumber}
+          {calculatorState}
         </div>
         <div>
           <Button>AC</Button>
