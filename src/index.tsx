@@ -88,8 +88,16 @@ const setCalculatorState = gg.setState(
           value.secondNumber &&
           value.secondNumber !== "."
         ) {
-          const parsedFirstNumber = parseFloat(value.firstNumber);
-          const parsedSecondNumber = parseFloat(value.secondNumber);
+          const parsedFirstNumber = parseFloat(
+            value.firstNumber === "ANS"
+              ? value.previousResult
+              : value.firstNumber
+          );
+          const parsedSecondNumber = parseFloat(
+            value.secondNumber === "ANS"
+              ? value.previousResult
+              : value.secondNumber
+          );
           switch (value.operator) {
             case "+":
               value.result = (
