@@ -36,11 +36,17 @@ const setCalculatorState = gg.setState(
       case "7":
       case "8":
       case "9": {
+        if (value.result) {
+          break;
+        }
         const number = value.operator ? "secondNumber" : "firstNumber";
         value[number] += buttonText;
         break;
       }
       case "0": {
+        if (value.result) {
+          break;
+        }
         const number = value.operator ? "secondNumber" : "firstNumber";
         if (value[number]) {
           value[number] += buttonText;
@@ -48,6 +54,9 @@ const setCalculatorState = gg.setState(
         break;
       }
       case ".": {
+        if (value.result) {
+          break;
+        }
         const number = value.operator ? "secondNumber" : "firstNumber";
         if (!value[number].includes(".")) {
           value[number] += buttonText;
@@ -58,6 +67,9 @@ const setCalculatorState = gg.setState(
       case "-":
       case "×":
       case "÷": {
+        if (value.result) {
+          break;
+        }
         if (
           value.firstNumber &&
           value.firstNumber !== "." &&
