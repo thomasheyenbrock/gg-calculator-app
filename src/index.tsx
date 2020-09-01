@@ -20,7 +20,14 @@ const setFirstNumber = gg.setState(firstNumber, (value, event) => {
   return value;
 });
 
-const setOperator = gg.setState(operator, (value) => {
+const setOperator = gg.setState(operator, (value, event) => {
+  if (!(event.target instanceof HTMLButtonElement)) {
+    return value;
+  }
+  const buttonText = event.target.innerText;
+  if (["+", "-", "×", "÷"].includes(buttonText)) {
+    return buttonText;
+  }
   return value;
 });
 
