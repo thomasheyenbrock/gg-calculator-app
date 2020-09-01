@@ -105,6 +105,20 @@ const setCalculatorState = gg.setState(
         value[number] += buttonText;
         break;
       }
+      case "0": {
+        const number = value.operator ? "secondNumber" : "firstNumber";
+        if (value[number]) {
+          value[number] += buttonText;
+        }
+        break;
+      }
+      case ".": {
+        const number = value.operator ? "secondNumber" : "firstNumber";
+        if (!value[number].includes(".")) {
+          value[number] += buttonText;
+        }
+        break;
+      }
     }
     return value;
   },
