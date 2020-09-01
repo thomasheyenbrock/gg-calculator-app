@@ -43,6 +43,9 @@ const stylesheet = gg.stylesheet(`
   .button:active {
     background-color: #93D5FC;
   }
+  .button + .button {
+    border-left: none;
+  }
 `);
 
 const PageComponent = gg.component(() => {
