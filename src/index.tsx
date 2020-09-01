@@ -4,7 +4,8 @@ const PageComponent = gg.component(() => {
   return (
     <html>
       <body>
-        <p>Hello from gg!</p>
+        <h1>Calculator App</h1>
+        <p>Apply one basic arithmetic operation at a time to two numbers.</p>
       </body>
     </html>
   );
