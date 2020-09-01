@@ -2,6 +2,10 @@ import { gg, SetStateHandler } from "../deps.ts";
 
 const firstNumber = gg.state("");
 
+const setFirstNumber = gg.setState(firstNumber, (value) => {
+  return value;
+});
+
 const buttonStyles = gg.stylesheet(`
   .button {
     padding: 0.25em 0;
