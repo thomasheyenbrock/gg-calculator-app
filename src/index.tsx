@@ -119,6 +119,19 @@ const setCalculatorState = gg.setState(
         }
         break;
       }
+      case "+":
+      case "-":
+      case "×":
+      case "÷": {
+        if (
+          value.firstNumber &&
+          value.firstNumber !== "." &&
+          !value.secondNumber
+        ) {
+          value.operator = buttonText;
+        }
+        break;
+      }
     }
     return value;
   },
