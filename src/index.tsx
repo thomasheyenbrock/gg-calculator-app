@@ -30,8 +30,11 @@ const setFirstNumber = gg.setState(
 
 const setOperator = gg.setState(
   operator,
-  (value, event, [firstNumberValue]) => {
+  (value, event, [firstNumberValue, secondNumberValue]) => {
     if (!firstNumberValue || firstNumberValue === ".") {
+      return value;
+    }
+    if (secondNumberValue) {
       return value;
     }
     if (!(event.target instanceof HTMLButtonElement)) {
@@ -43,7 +46,7 @@ const setOperator = gg.setState(
     }
     return value;
   },
-  [firstNumber]
+  [firstNumber, secondNumber]
 );
 
 const setSecondNumber = gg.setState(
