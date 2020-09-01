@@ -67,6 +67,41 @@ const setCalculatorState = gg.setState(
         }
         break;
       }
+      case "=": {
+        if (
+          value.firstNumber &&
+          value.firstNumber !== "." &&
+          value.operator &&
+          value.secondNumber &&
+          value.secondNumber !== "."
+        ) {
+          const parsedFirstNumber = parseFloat(value.firstNumber);
+          const parsedSecondNumber = parseFloat(value.secondNumber);
+          switch (value.operator) {
+            case "+":
+              value.result = (
+                parsedFirstNumber + parsedSecondNumber
+              ).toString();
+              break;
+            case "-":
+              value.result = (
+                parsedFirstNumber - parsedSecondNumber
+              ).toString();
+              break;
+            case "×":
+              value.result = (
+                parsedFirstNumber * parsedSecondNumber
+              ).toString();
+              break;
+            case "÷":
+              value.result = (
+                parsedFirstNumber / parsedSecondNumber
+              ).toString();
+              break;
+          }
+        }
+        break;
+      }
     }
     return value;
   },
