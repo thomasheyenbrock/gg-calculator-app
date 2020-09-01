@@ -178,6 +178,9 @@ const setPreviousResults = gg.setState(
       });
       return value;
     }
+    if (buttonText === "AC") {
+      return [];
+    }
     return value;
   },
   [calculatorState]
