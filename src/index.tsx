@@ -41,7 +41,11 @@ const setCalculatorState = gg.setState(
           break;
         }
         const number = value.operator ? "secondNumber" : "firstNumber";
-        value[number] += buttonText;
+        if (value[number] === "ANS") {
+          value[number] = buttonText;
+        } else {
+          value[number] += buttonText;
+        }
         break;
       }
       case "0": {
@@ -59,7 +63,9 @@ const setCalculatorState = gg.setState(
           break;
         }
         const number = value.operator ? "secondNumber" : "firstNumber";
-        if (!value[number].includes(".")) {
+        if (value[number] === "ANS") {
+          value[number] = buttonText;
+        } else if (!value[number].includes(".")) {
           value[number] += buttonText;
         }
         break;
