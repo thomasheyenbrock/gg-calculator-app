@@ -3,6 +3,11 @@ import { gg } from "../deps.ts";
 const PageComponent = gg.component(() => {
   return (
     <html>
+      <head>
+        <title>gg Calculator App</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body>
         <h1>Calculator App</h1>
         <p>Apply one basic arithmetic operation at a time to two numbers.</p>
