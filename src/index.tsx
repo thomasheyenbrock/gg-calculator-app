@@ -125,6 +125,14 @@ const setCalculatorState = gg.setState(
         value.result = "";
         break;
       }
+      case "AC": {
+        value.firstNumber = "";
+        value.operator = "";
+        value.secondNumber = "";
+        value.result = "";
+        value.previousResult = "";
+        break;
+      }
     }
     return value;
   },
