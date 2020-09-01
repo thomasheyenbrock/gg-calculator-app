@@ -52,6 +52,10 @@ const setSecondNumber = gg.setState(
     if (!operatorValue) {
       return value;
     }
+    if (!(event.target instanceof HTMLButtonElement)) {
+      return value;
+    }
+    const buttonText = event.target.innerText;
     return value;
   },
   [operator]
