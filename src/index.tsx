@@ -27,6 +27,22 @@ const stylesheet = gg.stylesheet(`
     border-radius: 0;
     width: 6rem;
   }
+  .button:hover {
+    background-color: #C7EAFF;
+  }
+  .button:focus {
+    outline: none;
+    border-color: #20A4F3;
+    box-shadow: -1px -1px 0 2px #20A4F3;
+    position: relative;
+    z-index: 1;
+  }
+  .button:focus:first-child {
+    box-shadow: 0px -2px 0 1px #20A4F3, 0px 0px 0 1px #20A4F3
+  }
+  .button:active {
+    background-color: #93D5FC;
+  }
 `);
 
 const PageComponent = gg.component(() => {
