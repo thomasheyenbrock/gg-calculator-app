@@ -1,6 +1,7 @@
 import { gg } from "../deps.ts";
 
 const firstNumber = gg.state("");
+const operator = gg.state("");
 
 const setFirstNumber = gg.setState(firstNumber, (value, event) => {
   if (!(event.target instanceof HTMLButtonElement)) {
@@ -100,7 +101,9 @@ const PageComponent = gg.component(() => {
       <body>
         <h1>Calculator App</h1>
         <p>Apply one basic arithmetic operation at a time to two numbers.</p>
-        <div class={[stylesheet.getClass("display")]}>{firstNumber}</div>
+        <div class={[stylesheet.getClass("display")]}>
+          {firstNumber} {operator}
+        </div>
         <div>
           <Button>AC</Button>
           <Button>C</Button>
