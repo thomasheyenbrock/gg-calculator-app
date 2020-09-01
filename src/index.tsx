@@ -20,6 +20,8 @@ const calculatorState = gg.state(
   }
 );
 
+const previousResults = gg.state([]);
+
 const setCalculatorState = gg.setState(
   calculatorState,
   (value, event) => {
