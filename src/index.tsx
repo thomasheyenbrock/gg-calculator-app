@@ -1,15 +1,15 @@
 import { gg } from "../deps.ts";
 
 type ButtonArgs = {
-  class?: string[];
+  isDoubleWidth?: boolean;
 };
 
 const Button = gg.component<ButtonArgs>((args) => {
-  return (
-    <button class={[stylesheet.getClass("button"), ...(args.class || [])]}>
-      {args.children}
-    </button>
-  );
+  const classes = [stylesheet.getClass("button")];
+  if (args.isDoubleWidth) {
+    classes.push(stylesheet.getClass("double-width"));
+  }
+  return <button class={classes}>{args.children}</button>;
 });
 
 const stylesheet = gg.stylesheet(`
@@ -100,7 +100,7 @@ const PageComponent = gg.component(() => {
           <Button>+</Button>
         </div>
         <div>
-          <Button class={[stylesheet.getClass("double-width")]}>0</Button>
+          <Button isDoubleWidth>0</Button>
           <Button>.</Button>
           <Button>=</Button>
         </div>
