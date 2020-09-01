@@ -1,8 +1,5 @@
 import { gg } from "../deps.ts";
 
-const firstNumber = gg.state("");
-const operator = gg.state("");
-const secondNumber = gg.state("");
 const calculatorState = gg.state(
   {
     firstNumber: "",
@@ -13,75 +10,6 @@ const calculatorState = gg.state(
     display: (value) =>
       [value.firstNumber, value.operator, value.secondNumber].join(" "),
   }
-);
-
-const setFirstNumber = gg.setState(
-  firstNumber,
-  (value, event, [operatorValue]) => {
-    if (operatorValue) {
-      return value;
-    }
-    if (!(event.target instanceof HTMLButtonElement)) {
-      return value;
-    }
-    const buttonText = event.target.innerText;
-    if (["1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(buttonText)) {
-      return value + buttonText;
-    }
-    if (buttonText === "0" && value) {
-      return value + buttonText;
-    }
-    if (buttonText === "." && !value.includes(".")) {
-      return value + buttonText;
-    }
-    return value;
-  },
-  [operator]
-);
-
-const setOperator = gg.setState(
-  operator,
-  (value, event, [firstNumberValue, secondNumberValue]) => {
-    if (!firstNumberValue || firstNumberValue === ".") {
-      return value;
-    }
-    if (secondNumberValue) {
-      return value;
-    }
-    if (!(event.target instanceof HTMLButtonElement)) {
-      return value;
-    }
-    const buttonText = event.target.innerText;
-    if (["+", "-", "×", "÷"].includes(buttonText)) {
-      return buttonText;
-    }
-    return value;
-  },
-  [firstNumber, secondNumber]
-);
-
-const setSecondNumber = gg.setState(
-  secondNumber,
-  (value, event, [operatorValue]) => {
-    if (!operatorValue) {
-      return value;
-    }
-    if (!(event.target instanceof HTMLButtonElement)) {
-      return value;
-    }
-    const buttonText = event.target.innerText;
-    if (["1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(buttonText)) {
-      return value + buttonText;
-    }
-    if (buttonText === "0" && value) {
-      return value + buttonText;
-    }
-    if (buttonText === "." && !value.includes(".")) {
-      return value + buttonText;
-    }
-    return value;
-  },
-  [operator]
 );
 
 const setCalculatorState = gg.setState(
