@@ -46,9 +46,16 @@ const setOperator = gg.setState(
   [firstNumber]
 );
 
-const setSecondNumber = gg.setState(secondNumber, (value) => {
-  return value;
-});
+const setSecondNumber = gg.setState(
+  secondNumber,
+  (value, event, [operatorValue]) => {
+    if (!operatorValue) {
+      return value;
+    }
+    return value;
+  },
+  [operator]
+);
 
 const buttonStyles = gg.stylesheet(`
   .button {
