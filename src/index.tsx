@@ -1,5 +1,14 @@
 import { gg } from "../deps.ts";
 
+const stylesheet = gg.stylesheet(`
+  body {
+    margin: 0 auto;
+    max-width: 24rem;
+    font-family: sans-serif;
+    background-color: #F6F7F8;
+  }
+`);
+
 const PageComponent = gg.component(() => {
   return (
     <html>
@@ -46,4 +55,4 @@ const PageComponent = gg.component(() => {
   );
 });
 
-export const page = gg.page(PageComponent);
+export const page = gg.page(PageComponent, { stylesheet });
