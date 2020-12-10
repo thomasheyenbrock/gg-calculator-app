@@ -102,12 +102,12 @@ const setCalculatorState = gg.setState(
         ) {
           const parsedFirstNumber = parseFloat(
             value.firstNumber === "ANS"
-              ? value.previousResult
+              ? previousResultsValue[0].result
               : value.firstNumber
           );
           const parsedSecondNumber = parseFloat(
             value.secondNumber === "ANS"
-              ? value.previousResult
+              ? previousResultsValue[0].result
               : value.secondNumber
           );
           switch (value.operator) {
@@ -135,26 +135,16 @@ const setCalculatorState = gg.setState(
         }
         break;
       }
-      case "C": {
-        if (value.result) {
-          value.previousResult = value.result;
-        }
-        value.firstNumber = "";
-        value.operator = "";
-        value.secondNumber = "";
-        value.result = "";
-        break;
-      }
+      case "C":
       case "AC": {
         value.firstNumber = "";
         value.operator = "";
         value.secondNumber = "";
         value.result = "";
-        value.previousResult = "";
         break;
       }
       case "ANS": {
-        if (value.result || !value.previousResult) {
+        if (value.result || !previousResultsValue[0].result) {
           break;
         }
         value[value.operator ? "secondNumber" : "firstNumber"] = buttonText;
