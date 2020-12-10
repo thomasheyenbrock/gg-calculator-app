@@ -6,7 +6,6 @@ const calculatorState = gg.state(
     operator: "",
     secondNumber: "",
     result: "",
-    previousResult: "",
   },
   {
     display: (value) =>
