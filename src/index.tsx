@@ -309,9 +309,15 @@ const PageComponent = gg.component(() => {
           {gg
             .unstable_list(previousResults, {
               result: (value) => value.result,
+              time: (value) => {
+                const date = new Date(parseInt(value.id));
+                return `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+              },
             })
             .map((selectors) => (
-              <li>{selectors.result}</li>
+              <li>
+                {selectors.result} (calculated at <time>{selectors.time}</time>)
+              </li>
             ))}
         </ul>
       </body>
