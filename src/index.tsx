@@ -28,7 +28,7 @@ const previousResults = gg.state(initialValue, {
 
 const setCalculatorState = gg.setState(
   calculatorState,
-  (value, event) => {
+  (value, event, [previousResultsValue]) => {
     if (!(event.target instanceof HTMLButtonElement)) {
       return value;
     }
@@ -163,7 +163,7 @@ const setCalculatorState = gg.setState(
     }
     return value;
   },
-  []
+  [previousResults]
 );
 
 const setPreviousResults = gg.setState(
